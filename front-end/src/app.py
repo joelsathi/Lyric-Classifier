@@ -2,7 +2,7 @@ import streamlit as st
 from inferencer import predict_genre
 import plotly.graph_objects as go
 
-model_path = "/home/joel-sathiyendra/University/BigDataAnalytics/labs/Lyric-Classifier/front-end/genre_prediction_model_2"
+model_path = "../genre_prediction_model_2"
 
 # Set the title of the app
 st.title("Lyric Genre Predictor")
@@ -84,15 +84,3 @@ if st.button("Predict Genre"):
 
         result= predicted_genre
         
-        # Handle different types of prediction results
-        if isinstance(result, str):
-            # If the result is a single genre string
-            st.success(f"The predicted genre is: {result}")
-        elif isinstance(result, dict):
-            # If the result is a dictionary of genre probabilities
-            predicted_genre = max(result, key=result.get)
-            st.success(f"The predicted genre is: {predicted_genre}")
-            # Display a bar chart of the probabilities
-            st.bar_chart(result)
-        else:
-            st.error("Unexpected prediction format.")

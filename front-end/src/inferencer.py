@@ -36,8 +36,6 @@ def predict_genre(model_path, lyric):
     indexer_model = model.stages[4]
     genre_labels = indexer_model.labels
 
-    print(f"Genre labels: {genre_labels}")
-
     # Define a UDF to map numerical predictions to genre strings
     def index_to_genre(index):
         return genre_labels[int(index)]
@@ -56,11 +54,11 @@ def predict_genre(model_path, lyric):
     return predicted_genre, predicted_prob, genre_prob_dict
 
 # Example usage
-if __name__ == "__main__":
-    model_path = "/home/joel-sathiyendra/University/BigDataAnalytics/labs/Lyric-Classifier/front-end/genre_prediction_model_2"
-    lyric = "I got a feeling that tonight's gonna be a good night"
-    predicted_genre, predicted_prob, genre_prob_dict = predict_genre(model_path, lyric)
-    print(f"Predicted Genre: {predicted_genre}")
-    print(f"Confidence: {predicted_prob:.4f}")
-    print("Genre Probabilities:", genre_prob_dict)
+# if __name__ == "__main__":
+#     model_path = "/home/joel-sathiyendra/University/BigDataAnalytics/labs/Lyric-Classifier/front-end/genre_prediction_model_2"
+#     lyric = "I got a feeling that tonight's gonna be a good night"
+#     predicted_genre, predicted_prob, genre_prob_dict = predict_genre(model_path, lyric)
+#     print(f"Predicted Genre: {predicted_genre}")
+#     print(f"Confidence: {predicted_prob:.4f}")
+#     print("Genre Probabilities:", genre_prob_dict)
     
