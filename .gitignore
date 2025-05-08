@@ -12,3 +12,7 @@
 /model/training-pipeline/genre_prediction_model/
 /model/training-pipeline/genre_prediction_model_2/
 /model/training-pipeline/predictions_csv/
+
+/model/data/.~lock.Merged_dataset.csv#
+
+/venv/
