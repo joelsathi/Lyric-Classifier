@@ -38,7 +38,7 @@ if st.button("Predict Genre"):
         st.success(f"Predicted Genre: {predicted_genre} (Confidence: {predicted_prob:.2%})")
 
         # Prepare data for pie chart
-        genre_labels = ['pop', 'country', 'blues', 'rock', 'jazz', 'reggae', 'hip hop', 'classic']
+        genre_labels = ['pop', 'country', 'blues', 'rock', 'jazz', 'reggae', 'hip hop', 'classical']
         probabilities = [genre_prob_dict[i] for i in range(len(genre_labels))]
         # Find the index and value of the maximum probability
         max_prob_index = probabilities.index(max(probabilities))
