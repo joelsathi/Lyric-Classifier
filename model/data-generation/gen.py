@@ -91,18 +91,18 @@ if __name__ == "__main__":
 
     genre = 'classic'
     
-    # df1 = get_lyrics_df(sp, genius)
-    # print(df1.head())
+    df1 = get_lyrics_df(sp, genius)
+    print(df1.head())
 
-    # df2 = get_lyrics_df(sp, genius, offset=80)
-    # print(df2.head())
+    df2 = get_lyrics_df(sp, genius, offset=80)
+    print(df2.head())
 
     df3 = get_lyrics_df(sp, genius, offset=200)
     print(df3.head())
 
     # Concatenate the DataFrames
-    # df = pd.concat([df1, df2, df3], ignore_index=True)
-    df = df3
+    df = pd.concat([df1, df2, df3], ignore_index=True)
+
     # Remove duplicates based on 'track_name' and 'artist_name'
     df = df.drop_duplicates(subset=['track_name', 'artist_name'], keep='first')
     # Reset the index
