@@ -1,8 +1,13 @@
 import streamlit as st
 from inferencer import predict_genre
 import plotly.graph_objects as go
+from pyspark.ml import PipelineModel
+from pyspark.sql import SparkSession
 
 model_path = "../genre_prediction_model_2"
+
+spark = SparkSession.builder.appName("Genre Prediction").getOrCreate()
+model = PipelineModel.load(model_path)
 
 # Set the title of the app
 st.title("Lyric Genre Predictor")
@@ -27,7 +32,7 @@ if st.button("Predict Genre"):
     else:
         with st.spinner("Predicting..."):
             # Call the predict_genre function
-            predicted_genre, predicted_prob, genre_prob_dict = predict_genre(model_path, lyrics)
+            predicted_genre, predicted_prob, genre_prob_dict = predict_genre(spark, model, lyrics)
 
         # Display the predicted genre and confidence
         st.success(f"Predicted Genre: {predicted_genre} (Confidence: {predicted_prob:.2%})")

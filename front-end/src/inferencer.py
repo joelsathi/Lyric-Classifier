@@ -3,7 +3,7 @@ from pyspark.ml import PipelineModel
 from pyspark.sql.functions import col, udf
 from pyspark.sql.types import StringType
 
-def predict_genre(model_path, lyric):
+def predict_genre(spark, model, lyric):
     """
     Predict the genre for a single lyric using the saved model and convert numerical predictions to strings.
     
@@ -14,15 +14,10 @@ def predict_genre(model_path, lyric):
     Returns:
         The predicted genre as a string
     """
-    # Initialize Spark Session
-    spark = SparkSession.builder.appName("Genre Prediction").getOrCreate()
 
     # Create a DataFrame with the single lyric (genre is a placeholder, not used for prediction)
     data = [(lyric, "unknown")]
     df = spark.createDataFrame(data, ["lyrics", "genre"])
-
-    # Load the saved model
-    model = PipelineModel.load(model_path)
 
     # Make predictions
     predictions = model.transform(df)
