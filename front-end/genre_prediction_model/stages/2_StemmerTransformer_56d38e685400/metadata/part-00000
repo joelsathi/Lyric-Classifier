@@ -1,0 +1,1 @@
+{"class":"pipeline_utils.StemmerTransformer","timestamp":1746627489052,"sparkVersion":"3.5.5","uid":"StemmerTransformer_56d38e685400","paramMap":{"inputCol":"filtered_words","outputCol":"stemmed_words"},"defaultParamMap":{"outputCol":"StemmerTransformer_56d38e685400__output"}}

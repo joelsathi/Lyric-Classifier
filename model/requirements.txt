@@ -1,0 +1,9 @@
+spotipy
+pyspark
+nltk
+numpy
+lyricsgenius
+python-dotenv
+pandas
+beautifulsoup4
+seaborn

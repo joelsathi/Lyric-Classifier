@@ -1,0 +1,1 @@
+{"class":"pipeline_utils.WordArrayToStringTransformer","timestamp":1746627489218,"sparkVersion":"3.5.5","uid":"WordArrayToStringTransformer_b9bcabfd2377","paramMap":{"inputCol":"stemmed_words","outputCol":"processed_lyrics"},"defaultParamMap":{"outputCol":"WordArrayToStringTransformer_b9bcabfd2377__output"}}
